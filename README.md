@@ -34,3 +34,9 @@ Os dados são armazenados no navegador utilizado. Nesta versão, não há banco 
 
 Versão inicial do MVP desenvolvida para demonstrar o cadastro, a organização e a pesquisa de produtos.
 
+## Segurança e qualidade
+
+- Os dados dos formulários são validados antes do cadastro.
+- A renderização dos produtos utiliza `textContent`, evitando interpretar os nomes e as descrições como HTML.
+- Os dados ficam armazenados no navegador por meio do localStorage.
+- Esta versão não possui autenticação nem banco de dados remoto.
