@@ -16,7 +16,9 @@ try {
     produtos = dadosSalvos.filter((produto) =>
       produto &&
       typeof produto.nome === "string" &&
+      produto.nome.trim().length > 0 &&
       typeof produto.categoria === "string" &&
+      produto.categoria.trim().length > 0 &&
       Number.isFinite(produto.preco) &&
       produto.preco > 0
     );
@@ -68,14 +70,31 @@ formulario.addEventListener("submit", (evento) => {
   evento.preventDefault();
 
   const dados = new FormData(formulario);
-  const nome = String(dados.get("nome")).trim();
-  const categoria = String(dados.get("categoria")).trim();
-  const preco = Number(dados.get("preco"));
-  const descricao = String(dados.get("descricao")).trim();
+  const nome = String(dados.get("nome") ?? "").trim();
+  const categoria = String(dados.get("categoria") ?? "").trim();
+  const precoTexto = String(dados.get("preco") ?? "").trim();
+  const preco = Number(precoTexto);
+  const descricao = String(dados.get("descricao") ?? "").trim();
 
-  if (!nome || !categoria || !Number.isFinite(preco) || preco <= 0) {
+  if (!nome || !categoria) {
+    mensagem.textContent = "Informe o nome e a categoria do produto.";
+    return;
+  }
+
+  if (nome.length > 100 || categoria.length > 60) {
     mensagem.textContent =
-      "Preencha os campos corretamente e informe um preço positivo.";
+      "O nome deve ter até 100 caracteres e a categoria até 60.";
+    return;
+  }
+
+  if (!precoTexto || !Number.isFinite(preco) || preco <= 0) {
+    mensagem.textContent = "Informe um preço válido maior que zero.";
+    return;
+  }
+
+  if (descricao.length > 500) {
+    mensagem.textContent =
+      "A descrição deve ter no máximo 500 caracteres.";
     return;
   }
 
