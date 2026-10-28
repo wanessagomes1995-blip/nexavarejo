@@ -1,0 +1,26 @@
+{
+  "name": "nexavarejo",
+  "version": "1.0.0",
+  "description": "MVP para cadastro e organização de produtos de pequenos comércios.",
+  "main": "script.js",
+  "scripts": {
+    "test": "vitest run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wanessagomes1995-blip/nexavarejo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/wanessagomes1995-blip/nexavarejo/issues"
+  },
+  "homepage": "https://github.com/wanessagomes1995-blip/nexavarejo#readme",
+  "devDependencies": {
+    "@vitest/coverage-v8": "^5.0.5",
+    "jsdom": "^30.1.3",
+    "vitest": "^5.0.5"
+  }
+}
