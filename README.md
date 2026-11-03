@@ -34,3 +34,4 @@ Os dados são armazenados no navegador utilizado. Nesta versão, não há banco 
 
 Versão inicial do MVP desenvolvida para demonstrar o cadastro, a organização e a pesquisa de produtos.
 
+Publicação do projeto NexaVarejo pelo GitHub Pages.
